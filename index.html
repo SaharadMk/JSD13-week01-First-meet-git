@@ -3,27 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRD</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.6;
-      color: #1a1a1a;
-    }
-    h1 { font-size: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-    h2 { font-size: 1.5rem; color: #333; }
-    h3 { font-size: 1.25rem; color: #555; }
-    hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
-  </style>
+  <title>HTML Tags Demo</title>
 </head>
 <body>
-  <p>Product requirement document</p>
-  <hr>
-  <h1>PRD</h1>
-  <h2>hello</h2>
-  <h3>world</h3>
+
+  <header>
+    <h1>HTML Tags Demo Page</h1>
+    <nav>
+      <ul>
+        <li><a href="#text">Text Elements</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#media-section">Links &amp; Images</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#media">Media</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Welcome to the <strong>HTML Tags Demo</strong> page. This page demonstrates commonly used HTML tags in a <em>real-world</em> layout. You can view the source to see how each tag is used.</p>
+      <hr>
+    </section>
+
+    <section id="text">
+      <h2>Text Elements</h2>
+
+      <h1>Heading Level 1</h1>
+      <h2>Heading Level 2</h2>
+      <h3>Heading Level 3</h3>
+      <h4>Heading Level 4</h4>
+      <h5>Heading Level 5</h5>
+      <h6>Heading Level 6</h6>
+
+      <p>This is a standard paragraph (<code>&lt;p&gt;</code>). It contains a line break below.<br>This text appears after the line break.</p>
+
+      <p><strong>Strong text</strong> and <em>emphasized text</em> and <small>small text</small>.</p>
+
+      <pre>Preformatted text:
+  preserves spacing
+    and line breaks.</pre>
+
+      <blockquote cite="https://example.com">
+        This is a blockquote. It represents a quoted section from another source.
+        <footer>— Example Source</footer>
+      </blockquote>
+    </section>
+
+    <section id="lists">
+      <h2>Lists</h2>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+      </ol>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+      </ul>
+
+      <h3>Description List</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language — the standard language for web pages.</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets — used to style HTML content.</dd>
+      </dl>
+    </section>
+
+    <section id="media-section">
+      <h2>Links and Images</h2>
+
+      <p>Visit <a href="https://developer.mozilla.org">MDN Web Docs</a> to learn more about HTML.</p>
+
+      <figure>
+        <img src="https://placehold.co/400x200" alt="Placeholder image showing a 400 by 200 rectangle">
+        <figcaption>A placeholder image with descriptive alt text.</figcaption>
+      </figure>
+    </section>
+
+    <section id="tables">
+      <h2>Tables</h2>
+
+      <table>
+        <caption>Sample Course Schedule</caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Topic</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>HTML Basics</td>
+            <td>2 hours</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>CSS Fundamentals</td>
+            <td>2 hours</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>JavaScript Intro</td>
+            <td>2 hours</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="forms">
+      <h2>Forms</h2>
+
+      <form>
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic">
+            <option value="">Select a topic</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <button type="submit">Send</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="media">
+      <h2>Media</h2>
+
+      <h3>Audio</h3>
+      <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Video</h3>
+      <video controls width="400" src="https://www.w3schools.com/html/mov_bbb.mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <aside>
+      <h2>Aside Notes</h2>
+      <p>This content is inside an <code>&lt;aside&gt;</code> tag. It is used for tangentially related content, such as side notes or tips.</p>
+      <p><small>Tip: Use semantic HTML to improve accessibility and SEO.</small></p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 HTML Tags Demo. Built with <strong>HTML only</strong>.</p>
+  </footer>
+
 </body>
 </html>

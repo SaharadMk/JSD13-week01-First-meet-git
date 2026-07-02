@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf7f2;
+      color: #1e1b16;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1e1b16, #3d352a);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      color: #b7aba0;
+      margin-top: 10px;
+      font-size: 1.05rem;
+    }
+    .hero .count {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.08);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #d4c9bd;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 210px;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-img-wrap img {
+      transform: scale(1.08);
+    }
+    .card-id-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .card-body {
+      padding: 20px 22px 22px;
+    }
+    .card-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e1b16;
+    }
+    .card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+    }
+    .card-info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-info-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #a89c8e;
+    }
+    .card-info-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2d2a24;
+      margin-top: 2px;
+    }
+    .veg-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .veg-badge.yes { background: #e6f7ec; color: #1e7e34; }
+    .veg-badge.no { background: #fde8e8; color: #b91c1c; }
+    .veg-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    }
+    .veg-badge.yes .dot { background: #1e7e34; }
+    .veg-badge.no .dot { background: #b91c1c; }
+    .url-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .url-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #1e1b16;
+      margin-bottom: 16px;
+    }
+    .url-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .url-table th {
+      background: #1e1b16;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 14px 18px;
+    }
+    .url-table td {
+      padding: 12px 18px;
+      font-size: 0.85rem;
+      color: #4a443c;
+      border-bottom: 1px solid #f0ece6;
+      word-break: break-all;
+    }
+    .url-table tr:last-child td { border-bottom: none; }
+    .url-table td:first-child { font-weight: 700; color: #1e1b16; }
+    .url-table td:nth-child(2) { font-weight: 600; }
+    .url-table .url-cell {
+      font-size: 0.78rem;
+      color: #7a6f62;
+      font-family: monospace;
+    }
+    .url-table a { color: #c97b3a; text-decoration: none; }
+    .url-table a:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .url-table th, .url-table td { padding: 10px 12px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Our Menu</h1>
+    <p>Handpicked dishes from around the world</p>
+    <span class="count">5 items</span>
+  </section>
+
+  <div class="container">
+    <div class="menu-grid" id="menu-grid"></div>
+  </div>
+
+  <section class="url-section">
+    <h2>Image URLs</h2>
+    <table class="url-table">
+      <thead>
+        <tr><th>#</th><th>Name</th><th>Image URL</th></tr>
+      </thead>
+      <tbody id="url-table-body"></tbody>
+    </table>
+  </section>
+
+  <script src="my-object.js"></script>
+  <script>
+    const grid = document.getElementById('menu-grid');
+    const tbody = document.getElementById('url-table-body');
+
+    Food.forEach(item => {
+      const veg = item.vegetarian === 'Yes';
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-img-wrap">
+          <img src="${item.image}" alt="${item.name}" loading="lazy">
+          <span class="card-id-badge">#${item.id}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">${item.name}</div>
+          <div class="card-row">
+            <div class="card-info-item">
+              <span class="card-info-label">Cuisine</span>
+              <span class="card-info-value">${item.cuisine}</span>
+            </div>
+            <span class="veg-badge ${veg ? 'yes' : 'no'}">
+              <span class="dot"></span>
+              ${veg ? 'Vegetarian' : 'Non-vegetarian'}
+            </span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td class="url-cell"><a href="${item.image}" target="_blank">${item.image}</a></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+
+</body>
+</html>
